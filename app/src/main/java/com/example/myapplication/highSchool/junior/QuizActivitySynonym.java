@@ -44,6 +44,7 @@ public class QuizActivitySynonym extends AppCompatActivity {
         if (currentIndex >= quizWords.size()) {
             Intent intent = new Intent(QuizActivitySynonym.this, ResultActivity.class);
             intent.putExtra("SCORE", score);
+            intent.putExtra("TOTAL", quizWords.size());
             startActivity(intent);
             finish();
             return;

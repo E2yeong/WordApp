@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.highSchool.high;
@@ -22,12 +23,17 @@ public class senior2 extends AppCompatActivity {
         }
 
         // 버튼 ID 배열
-        int[] buttonIds = {R.id.btnr, R.id.btnr2};
+        int[] buttonIds = {R.id.btnr};
 
         // 버튼이 이동할 액티비티 클래스 배열
         Class<?>[] activities = {
-                senior2mean.class, senior2synonym.class
+                senior2mean.class
         };
+
+        // 동의어 찾기는 아직 단어 목록이 없어서 안내만 표시
+        Button synonymButton = findViewById(R.id.btnr2);
+        synonymButton.setOnClickListener(view ->
+                Toast.makeText(getApplicationContext(), "준비 중인 기능입니다.", Toast.LENGTH_SHORT).show());
 
         // 버튼 클릭 리스너 설정 (for 문 사용)
         for (int i = 0; i < buttonIds.length; i++) {
