@@ -7,8 +7,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.highSchool.junior.WordList;
-
 public class ResultActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +17,8 @@ public class ResultActivity extends AppCompatActivity {
         Button btnRetry = findViewById(R.id.btnRetry);
 
         int score = getIntent().getIntExtra("SCORE", 0);
-        txtScore.setText("당신의 점수: " + score + "/" + WordList.getShuffledWords().size());
+        int total = getIntent().getIntExtra("TOTAL", 0); // 퀴즈마다 문제 수가 다르므로 퀴즈 화면에서 전달받음
+        txtScore.setText("당신의 점수: " + score + "/" + total);
 
         btnRetry.setOnClickListener(new View.OnClickListener() {
             @Override

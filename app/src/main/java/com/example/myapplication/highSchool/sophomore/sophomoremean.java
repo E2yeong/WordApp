@@ -191,6 +191,7 @@ public class sophomoremean extends AppCompatActivity {
         if (!exitFlag) { // 🔹 back 버튼이 눌리지 않았을 때만 실행
             Intent intent = new Intent(sophomoremean.this, ResultActivity.class);
             intent.putExtra("SCORE", score);
+            intent.putExtra("TOTAL", quizWords.size());
             startActivity(intent);
             finish();
         }
